@@ -5,7 +5,7 @@ function randomNum(num) {
     return Math.floor(Math.random() * num);
 }
 
-console.log("Let's generate a sentence!")
+console.log("Let's generate a sentence!");
 
 //Prompts the user to enter values
 const nouns = prompt('Enter at least 3 nouns: ');

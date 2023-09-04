@@ -1,12 +1,29 @@
 const prompt = require('prompt-sync')({sigint: true});
 
 function randomNum(num) {
+    //Generate number from 0 to (num - 1)
     return Math.floor(Math.random() * num);
 }
 
-console.log(randomNum(10));
+console.log("Let's generate a sentence!")
 
+//Prompts the user to enter values
+const nouns = prompt('Enter at least 3 nouns: ');
+//Splits values into array
+let nounsList = nouns.split(" ");
+const adj = prompt('Enter at least 3 adjectives: ');
+let adjList = adj.split(" ");
+const verbs = prompt('Enter at least 3 verbs: ');
+let verbsList = verbs.split(" ");
 
-const name = prompt('What is your name? ');
+const generateSentence = (nounsList, adjList, verbsList) => {
+    //Gets random noun from list
+    let noun = nounsList[randomNum(nounsList.length)];
+    let adj = adjList[randomNum(adjList.length)];
+    let verb = verbsList[randomNum(verbsList.length)];
 
-console.log("Hey there " + name);
+    let sentence = `The ${adj} ${noun} wanted to ${verb} in the park.`;
+    console.log(sentence);
+}
+
+generateSentence(nounsList, adjList, verbsList);

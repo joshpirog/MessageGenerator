@@ -1,7 +1,7 @@
 const prompt = require('prompt-sync')({sigint: true});
 
+//Generates number from 0 to (num - 1)
 function randomNum(num) {
-    //Generate number from 0 to (num - 1)
     return Math.floor(Math.random() * num);
 }
 
